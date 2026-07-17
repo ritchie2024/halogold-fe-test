@@ -14,40 +14,44 @@ Prototipe web sederhana untuk studi kasus **HaloGold** (aplikasi investasi emas 
 ```
 halogold-app/
 ├── app/
-│   ├── layout.js          # Root layout, bungkus AppProvider
+│   ├── layout.js          # Root layout, bungkus AppProvider, font premium
 │   ├── page.js             # Redirect otomatis ke /login
-│   ├── globals.css         # Design tokens (warna, font) tema gold/fintech
+│   ├── globals.css         # Design tokens (warna, font) sesuai UI/UX Blueprint resmi
 │   ├── login/page.js       # Halaman Login (validasi input, tanpa autentikasi nyata)
-│   ├── dashboard/page.js   # Halaman Dashboard
-│   └── beli-emas/page.js   # Halaman Beli Emas
+│   ├── dashboard/page.js   # Beranda — saldo, tren harga, aksi cepat, aktivitas terakhir
+│   ├── beli-emas/page.js   # Beli Emas — alur 2 langkah (form → QRIS → sukses)
+│   ├── jual-emas/page.js   # Jual Emas (buyback) — estimasi dana & rekening tujuan
+│   ├── nabung/page.js      # Nabung Rutin & Target — progress tabungan
+│   ├── riwayat/page.js     # Riwayat transaksi lengkap, filter & grup per bulan
+│   ├── profil/page.js      # Profil & Keamanan
+│   └── segera-hadir/page.js # Placeholder modul roadmap (hGOLD Token, Cetak Fisik, dll)
 ├── components/
 │   ├── Header.js           # Navbar (logo, nama user, tombol keluar)
+│   ├── BottomNav.js        # Tab navigasi bawah (Beranda/Pasar/Riwayat/Profil + FAB Beli)
 │   ├── StatCard.js         # Card statistik (saldo, harga emas)
-│   └── TransactionRow.js   # Baris item transaksi
+│   ├── SparkChart.js       # Grafik mini tren harga emas (custom SVG)
+│   └── TransactionRow.js   # Baris item transaksi (beli/jual/token/fisik)
 └── lib/
-    ├── AppContext.js       # State management global (saldo, transaksi, fungsi buyGold)
-    ├── dummyData.js        # Data dummy (user, harga emas, transaksi awal)
-    └── format.js           # Helper format Rupiah, gram, tanggal
+    ├── AppContext.js       # State management global (saldo, transaksi, buyGold, sellGold)
+    ├── dummyData.js         # Data dummy (user, harga emas, transaksi, target tabungan)
+    └── format.js            # Helper format Rupiah, gram, tanggal
 ```
 
 ## Fitur yang Diimplementasikan
 
-**1. Login**
-- Input Email & Password dengan validasi (format email, panjang minimal password)
-- Tombol Login langsung mengarahkan ke Dashboard (tanpa proses autentikasi nyata, sesuai ketentuan)
+**Wajib sesuai spesifikasi Technical Test:**
+1. **Login** — validasi input, tanpa autentikasi nyata
+2. **Dashboard** — nama, saldo emas, harga emas hari ini, tombol beli, 5 transaksi terakhir
+3. **Beli Emas** — input nominal, kalkulasi gram otomatis, konfirmasi, notifikasi sukses
 
-**2. Dashboard**
-- Nama pengguna
-- Saldo emas (dummy, dalam gram + estimasi Rupiah)
-- Harga emas hari ini (dummy)
-- Tombol "Beli Emas"
-- Daftar 5 transaksi terakhir
-
-**3. Beli Emas**
-- Input nominal Rupiah (dengan pemformatan ribuan otomatis)
-- Kalkulasi otomatis jumlah gram berdasarkan harga emas
-- Tombol Konfirmasi
-- Notifikasi "Transaksi Berhasil" setelah konfirmasi, saldo & daftar transaksi ter-update langsung (state management)
+**Pengembangan tambahan** (mengacu ke UI/UX Blueprint resmi HaloGold, di luar minimum spesifikasi):
+4. **Jual Emas (Buyback)** — input gram, estimasi dana diterima (harga buyback + spread), rekening tujuan
+5. **Nabung Rutin & Target** — progress tabungan emas per tujuan (Haji, Pendidikan, dll)
+6. **Riwayat Transaksi** — daftar lengkap dengan filter kategori & pengelompokan per bulan
+7. **Profil & Keamanan** — info akun, status KYC, pengaturan keamanan
+8. **Alur pembayaran QRIS** — simulasi 2 langkah (form → scan QRIS → sukses), dengan price-lock countdown
+9. **Bottom navigation** — akses cepat antar modul utama, sesuai pola tab bar di blueprint
+10. Modul lanjutan (hGOLD Token, Cetak Fisik, Kado Emas, Pasar) ditampilkan sebagai **halaman "Segera Hadir"** — placeholder yang menunjukkan pemahaman terhadap information architecture produk penuh, tanpa memaksakan implementasi fitur kompleks (KYC, on-chain token, dsb.) di luar cakupan technical test 8 jam.
 
 ## Cara Menjalankan
 
