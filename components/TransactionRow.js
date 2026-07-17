@@ -2,9 +2,9 @@ import { ArrowDownToLine, ArrowUpFromLine, Coins, Package } from "lucide-react";
 import { formatDate, formatGram, formatIDR } from "@/lib/format";
 
 const TYPE_META = {
-  beli: { icon: ArrowDownToLine, bg: "bg-cream-2", fg: "text-gold-deep", label: "Beli Emas" },
+  beli: { icon: ArrowDownToLine, bg: "bg-chip", fg: "text-gold-deep", label: "Beli Emas" },
   jual: { icon: ArrowUpFromLine, bg: "bg-[#E4F0E8]", fg: "text-positive", label: "Jual Emas" },
-  token: { icon: Coins, bg: "bg-cream-2", fg: "text-gold-deep", label: "Konversi ke hGOLD" },
+  token: { icon: Coins, bg: "bg-chip", fg: "text-gold-deep", label: "Konversi ke hGOLD" },
   fisik: { icon: Package, bg: "bg-[#F6E2DC]", fg: "text-negative", label: "Cetak Fisik" },
 };
 

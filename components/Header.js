@@ -16,8 +16,8 @@ export default function Header() {
             H
           </span>
           <span
-            className="font-label text-[13px] text-ink"
-            style={{ fontFamily: "var(--font-label)", letterSpacing: "0.18em" }}
+            className="text-[13px] font-semibold text-ink"
+            style={{ fontFamily: "var(--font-logo)", letterSpacing: "0.16em" }}
           >
             HALO<span className="text-gold-deep">GOLD</span>
           </span>
@@ -39,7 +39,7 @@ export default function Header() {
           <span className="hidden text-sm text-ink-2 sm:inline">
             {user.name}
           </span>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 bg-cream-2 font-serif text-sm text-gold-deep">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 bg-chip font-serif text-sm text-gold-deep">
             {initial}
           </span>
           <Link

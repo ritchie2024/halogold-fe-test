@@ -72,15 +72,7 @@ export default function LoginPage() {
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-soft via-gold to-gold-deep text-white shadow-[0_10px_24px_-8px_rgba(140,102,38,0.6)]">
             <Gem size={26} strokeWidth={1.75} />
           </span>
-          <p
-            className="mt-5 text-gold-deep"
-            style={{
-              fontFamily: "var(--font-label)",
-              fontSize: "0.68rem",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-            }}
-          >
+          <p className="label-eyebrow mt-5 text-gold-deep">
             Investasi Emas Digital
           </p>
           <h1 className="mt-3 font-serif text-[2.4rem] font-medium leading-none tracking-tight text-ink">

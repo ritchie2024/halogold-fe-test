@@ -90,7 +90,7 @@ export default function DashboardPage() {
                   href={action.href}
                   className="flex flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-surface px-2 py-4 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition hover:border-gold hover:shadow-[0_10px_24px_-10px_rgba(42,31,20,0.14)]"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream-2 text-gold-deep">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-chip text-gold-deep">
                     <Icon size={16} strokeWidth={1.9} />
                   </span>
                   <span className="text-[11px] font-medium leading-tight text-ink-2">

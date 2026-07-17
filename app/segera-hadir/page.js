@@ -35,7 +35,7 @@ function ComingSoonContent() {
         </Link>
 
         <div className="mt-10 flex flex-col items-center rounded-2xl border border-line bg-surface p-10 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)]">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cream-2 text-gold-deep">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-chip text-gold-deep">
             <Sparkles size={26} strokeWidth={1.75} />
           </span>
           <p className="mt-5 label-eyebrow text-gold-deep">

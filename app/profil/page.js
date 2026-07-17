@@ -75,7 +75,7 @@ export default function ProfilPage() {
                 className="flex items-center justify-between gap-3 border-b border-line/70 py-3 last:border-none"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-cream-2 text-gold-deep">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-chip text-gold-deep">
                     <Icon size={16} strokeWidth={2} />
                   </span>
                   <div>
@@ -96,7 +96,7 @@ export default function ProfilPage() {
 
           <div className="flex items-center justify-between gap-3 border-t border-line/70 pt-3">
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-cream-2 text-gold-deep">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-chip text-gold-deep">
                 <Landmark size={16} strokeWidth={2} />
               </span>
               <div>
@@ -128,7 +128,7 @@ export default function ProfilPage() {
                 className="flex w-full items-center justify-between gap-3 border-b border-line/70 py-3 text-left last:border-none"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-cream-2 text-gold-deep">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-chip text-gold-deep">
                     <Icon size={16} strokeWidth={2} />
                   </span>
                   <p className="text-sm font-medium text-ink">{item.title}</p>

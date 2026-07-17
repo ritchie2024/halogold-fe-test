@@ -1,63 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  /* ---- Rasio 60-30-10: cream (60% dominan) / ink teks (30%) / gold (10% aksen) ---- */
+  /* ---- Rasio 60-30-10: cream (60% dominan) / ink teks (30%) / gold (10% aksen) ----
+     Intensitas dinaikkan dari revisi sebelumnya: border & zona sekunder lebih tegas,
+     gold lebih jenuh (saturated), shadow lebih terasa — supaya "premium" tidak jadi "pudar". */
   --color-cream: #faf5ea;      /* 60% — latar dominan */
-  --color-cream-2: #f3ead7;    /* variasi latar sekunder */
+  --color-cream-2: #efe0c0;    /* zona sekunder — dinaikkan kontrasnya dari revisi awal */
   --color-surface: #ffffff;    /* permukaan kartu */
-  --color-ink: #2a1f14;        /* 30% — teks & elemen gelap */
+  --color-ink: #241a10;        /* 30% — teks & elemen gelap, sedikit lebih pekat */
   --color-ink-2: #5c4e3c;
-  --color-line: #e4d9c3;
-  --color-gold: #b8893d;       /* 10% — aksen */
-  --color-gold-deep: #8c6626;
+  --color-line: #d9c8a0;       /* border lebih tegas, tidak lagi nyaris tak terlihat */
+  --color-gold: #b3801f;       /* 10% — aksen, dinaikkan saturasinya */
+  --color-gold-deep: #7a5518;
   --color-gold-soft: #e9d9b8;
+  --color-chip: #e9d5a8;       /* latar ikon/badge — kontras jelas dari surface & cream */
   --color-positive: #2e7d4f;
   --color-negative: #b3432b;
   --color-on-gold: #f5efe2;    /* teks tetap terang di atas kartu gold-gradient gelap (kedua tema) */
 
-  --card-shadow: 0 2px 10px -4px rgba(42, 31, 20, 0.06);
-  --card-shadow-hover: 0 10px 24px -10px rgba(42, 31, 20, 0.14);
-  --gold-glow: 0 0 0 rgba(184, 137, 61, 0);
+  --card-shadow: 0 3px 14px -5px rgba(36, 26, 16, 0.12);
+  --card-shadow-hover: 0 12px 28px -10px rgba(36, 26, 16, 0.2);
+  --gold-glow: 0 0 0 rgba(179, 128, 31, 0);
 
   /* ---- Skala spasi (basis 4px) ---- */
-  --space-1: 0.25rem;  /* 4px */
-  --space-2: 0.5rem;   /* 8px */
-  --space-3: 0.75rem;  /* 12px */
-  --space-4: 1rem;     /* 16px */
-  --space-5: 1.25rem;  /* 20px */
-  --space-6: 1.5rem;   /* 24px */
-  --space-8: 2rem;     /* 32px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
 
   /* ---- Skala radius (aturan nesting: radius-luar = radius-dalam + padding) ---- */
-  --radius-sm: 0.5rem;   /* 8px  — chip, badge kecil */
-  --radius-md: 0.75rem;  /* 12px — input, tombol, elemen di dalam kartu */
-  --radius-lg: 1.25rem;  /* 20px — kartu utama */
-  --radius-full: 999px;  /* pill, avatar, FAB */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-full: 999px;
 }
 
-/* ---- Dark mode: gaya "dark-luxury-glow", tetap rasio 60-30-10 yang sama ---- */
+/* ---- Dark mode: gaya "dark-luxury-glow" ---- */
 .dark {
   --color-cream: #0b0904;
-  --color-cream-2: #17130c;
-  --color-surface: #151109;
-  --color-ink: #f1e8d6;
-  --color-ink-2: #a99a7c;
-  --color-line: #2c2416;
-  --color-gold: #d9ad52;
-  --color-gold-deep: #f0c766;
+  --color-cream-2: #1d170c;
+  --color-surface: #171209;
+  --color-ink: #f3ead9;
+  --color-ink-2: #b3a382;
+  --color-line: #3a2f1a;
+  --color-gold: #dcb15a;
+  --color-gold-deep: #f2ca70;
   --color-gold-soft: #f6dfa0;
+  --color-chip: #3a2c14;       /* jelas lebih terang dari surface (#171209) — ikon tidak lagi tenggelam */
   --color-positive: #55b884;
   --color-negative: #e08669;
 
-  --card-shadow: 0 1px 0 rgba(217, 173, 82, 0.06) inset, 0 10px 30px -12px rgba(0, 0, 0, 0.6);
-  --card-shadow-hover: 0 1px 0 rgba(217, 173, 82, 0.1) inset, 0 16px 40px -14px rgba(0, 0, 0, 0.7);
-  --gold-glow: 0 0 28px rgba(217, 173, 82, 0.25);
+  --card-shadow: 0 1px 0 rgba(220, 177, 90, 0.08) inset, 0 10px 30px -12px rgba(0, 0, 0, 0.65);
+  --card-shadow-hover: 0 1px 0 rgba(220, 177, 90, 0.13) inset, 0 16px 40px -14px rgba(0, 0, 0, 0.75);
+  --gold-glow: 0 0 28px rgba(220, 177, 90, 0.28);
 }
 
 @theme inline {
   --color-cream: var(--color-cream);
   --color-cream-2: var(--color-cream-2);
   --color-surface: var(--color-surface);
+  --color-chip: var(--color-chip);
   --color-gold: var(--color-gold);
   --color-gold-deep: var(--color-gold-deep);
   --color-gold-soft: var(--color-gold-soft);
@@ -67,16 +72,20 @@
   --color-positive: var(--color-positive);
   --color-negative: var(--color-negative);
   --color-on-gold: var(--color-on-gold);
-  --font-sans: "Crimson Pro", ui-serif, Georgia, serif;
+
+  /* ---- Font pairing: sans-serif modern untuk UI/body, serif klasik HANYA untuk
+     angka besar & judul (aksen), Cinzel HANYA untuk logotype "HaloGold" ---- */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-label: "Cinzel", "Cormorant Garamond", serif;
+  --font-label: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+  --font-logo: "Cinzel", serif;
 }
 
 body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: 16.5px;
+  font-size: 16px;
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
@@ -91,20 +100,24 @@ body {
   font-weight: 500;
 }
 
-/* Label bergaya "eyebrow" — huruf kapital berjarak lebar, dipakai konsisten
-   di seluruh halaman sebagai signature tipografi. */
+.font-logo {
+  font-family: var(--font-logo);
+}
+
+/* Label bergaya "eyebrow" — sekarang sans-serif modern, huruf kapital, tracking
+   moderat (bukan super lebar ala label klasik) supaya terasa muda & tegas. */
 .label-eyebrow {
   font-family: var(--font-label);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* Garis tipis emas — signature divider di bawah judul */
 .gold-rule {
   width: 44px;
-  height: 1.5px;
+  height: 2px;
   background: linear-gradient(to right, var(--color-gold), transparent);
 }
 
@@ -125,7 +138,7 @@ body {
   box-shadow: var(--gold-glow);
 }
 
-/* Skala tipografi finansial presisi (referensi: hero ~34px, section ~17px, label 13-15px) */
+/* Skala tipografi finansial presisi */
 .text-hero-figure {
   font-size: 2.125rem; /* 34px */
   line-height: 1.1;
@@ -149,10 +162,10 @@ body {
   border-radius: var(--radius-md);
   padding: 0.8rem 1.25rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   background: linear-gradient(155deg, var(--color-gold) 0%, var(--color-gold-deep) 100%);
-  box-shadow: 0 10px 22px -8px rgba(140, 102, 38, 0.55), var(--gold-glow);
+  box-shadow: 0 10px 22px -8px rgba(122, 85, 24, 0.55), var(--gold-glow);
   transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
@@ -178,7 +191,7 @@ body {
   border-radius: var(--radius-md);
   padding: 0.75rem 1.25rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-gold-deep);
   background: transparent;
   border: 1.5px solid var(--color-gold);

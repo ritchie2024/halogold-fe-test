@@ -60,6 +60,9 @@ Beberapa penyesuaian teknis diterapkan berdasarkan prinsip UI/UX standar:
 - **Token warna berbasis CSS variable** — seluruh palet (termasuk dark mode) didefinisikan terpusat di `globals.css`, sehingga konsisten di semua komponen tanpa duplikasi.
 - **Skala tipografi presisi** — angka saldo/harga utama menggunakan ukuran tetap 34px (`.text-hero-figure`), bukan ukuran Tailwind default yang lebih sembarangan.
 - **Rasio warna 60-30-10** — cream sebagai warna dominan (60%), ink/teks sekunder (30%), gold sebagai aksen (10%) — konsisten di light & dark mode.
+- **Kombinasi font klasik + modern** — Plus Jakarta Sans (sans-serif modern) sebagai basis seluruh body/UI teks, Cormorant Garamond (serif) dipakai selektif hanya untuk angka besar & judul halaman sebagai aksen "klasik-elegan", dan Cinzel dipakai tunggal hanya untuk logotype "HaloGold" — supaya tampilan terasa muda & modern tanpa kehilangan sentuhan premium.
+- **Kontras warna dinaikkan** — border, zona sekunder, dan warna gold dibuat lebih tegas/jenuh dari revisi awal (yang terlalu pudar), termasuk shadow kartu yang lebih terasa kedalamannya.
+- **Token `chip` khusus latar ikon** — sebelumnya ikon di dark mode memakai warna yang nyaris sama dengan latar kartu (jadi tenggelam). Sekarang ada token warna terpisah khusus badge/ikon yang kontrasnya dijaga jelas dari latar di kedua tema.
 
 ## Cara Menjalankan
 
