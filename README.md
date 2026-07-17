@@ -52,6 +52,14 @@ halogold-app/
 8. **Alur pembayaran QRIS** — simulasi 2 langkah (form → scan QRIS → sukses), dengan price-lock countdown
 9. **Bottom navigation** — akses cepat antar modul utama, sesuai pola tab bar di blueprint
 10. Modul lanjutan (hGOLD Token, Cetak Fisik, Kado Emas, Pasar) ditampilkan sebagai **halaman "Segera Hadir"** — placeholder yang menunjukkan pemahaman terhadap information architecture produk penuh, tanpa memaksakan implementasi fitur kompleks (KYC, on-chain token, dsb.) di luar cakupan technical test 8 jam.
+11. **Dark mode** — toggle tema terang/gelap (ikon bulan/matahari di header & halaman login), tersimpan di localStorage, mengikuti preferensi sistem sebagai default. Palet gelap terinspirasi gaya "dark-luxury-glow" (kartu gelap dengan aksen emas terang), sementara struktur rasio warna 60% dominan / 30% teks / 10% aksen dipertahankan konsisten di kedua tema.
+
+## Catatan Audit Desain
+
+Beberapa penyesuaian teknis diterapkan berdasarkan prinsip UI/UX standar:
+- **Token warna berbasis CSS variable** — seluruh palet (termasuk dark mode) didefinisikan terpusat di `globals.css`, sehingga konsisten di semua komponen tanpa duplikasi.
+- **Skala tipografi presisi** — angka saldo/harga utama menggunakan ukuran tetap 34px (`.text-hero-figure`), bukan ukuran Tailwind default yang lebih sembarangan.
+- **Rasio warna 60-30-10** — cream sebagai warna dominan (60%), ink/teks sekunder (30%), gold sebagai aksen (10%) — konsisten di light & dark mode.
 
 ## Cara Menjalankan
 

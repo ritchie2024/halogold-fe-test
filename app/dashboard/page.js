@@ -37,7 +37,7 @@ export default function DashboardPage() {
         <PageHeading eyebrow="Selamat Datang Kembali" title={user.name} />
 
         <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-cream shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:col-span-1 sm:p-6">
+          <div className="relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:col-span-1 sm:p-6">
             <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
             <div className="relative flex items-start justify-between">
               <p className="label-eyebrow text-gold-soft">
@@ -45,7 +45,7 @@ export default function DashboardPage() {
               </p>
               <Coins size={18} strokeWidth={1.75} className="text-gold-soft/80" />
             </div>
-            <p className="relative mt-2 font-serif text-3xl">
+            <p className="relative mt-2 font-serif text-hero-figure">
               {formatGram(balanceGram)}
             </p>
             <p className="relative mt-1 text-sm text-[#E5D6B5]">
@@ -54,13 +54,13 @@ export default function DashboardPage() {
             <div className="relative mt-4 grid grid-cols-3 gap-2">
               <Link
                 href="/beli-emas"
-                className="rounded-lg bg-white/15 py-2 text-center text-xs font-semibold text-cream ring-1 ring-inset ring-white/25 transition hover:bg-white/25"
+                className="rounded-lg bg-white/15 py-2 text-center text-xs font-semibold text-on-gold ring-1 ring-inset ring-white/25 transition hover:bg-white/25"
               >
                 Beli
               </Link>
               <Link
                 href="/jual-emas"
-                className="rounded-lg bg-white/15 py-2 text-center text-xs font-semibold text-cream ring-1 ring-inset ring-white/25 transition hover:bg-white/25"
+                className="rounded-lg bg-white/15 py-2 text-center text-xs font-semibold text-on-gold ring-1 ring-inset ring-white/25 transition hover:bg-white/25"
               >
                 Jual
               </Link>
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                 <Link
                   key={action.label}
                   href={action.href}
-                  className="flex flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-white px-2 py-4 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition hover:border-gold hover:shadow-[0_10px_24px_-10px_rgba(42,31,20,0.14)]"
+                  className="flex flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-surface px-2 py-4 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition hover:border-gold hover:shadow-[0_10px_24px_-10px_rgba(42,31,20,0.14)]"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream-2 text-gold-deep">
                     <Icon size={16} strokeWidth={1.9} />
@@ -102,7 +102,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <section className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
+        <section className="mt-10 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-serif text-[1.4rem] font-medium text-ink">
               Aktivitas Terakhir

@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import { LogOut, Moon, Sun } from "lucide-react";
 import { useApp } from "@/lib/AppContext";
 
 export default function Header() {
-  const { user } = useApp();
+  const { user, theme, toggleTheme } = useApp();
   const initial = user.name.charAt(0).toUpperCase();
 
   return (
@@ -24,6 +24,18 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Aktifkan mode terang" : "Aktifkan mode gelap"}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-ink-2 transition hover:border-gold hover:text-gold-deep"
+          >
+            {theme === "dark" ? (
+              <Sun size={15} strokeWidth={2} />
+            ) : (
+              <Moon size={15} strokeWidth={2} />
+            )}
+          </button>
           <span className="hidden text-sm text-ink-2 sm:inline">
             {user.name}
           </span>

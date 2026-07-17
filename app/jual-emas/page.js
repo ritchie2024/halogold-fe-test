@@ -63,7 +63,7 @@ export default function JualEmasPage() {
         <PageHeading eyebrow="Buyback" title="Jual Emas" />
 
         {lastTrx ? (
-          <div className="mt-6 rounded-2xl border border-line bg-white p-6 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-8">
+          <div className="mt-6 rounded-2xl border border-line bg-surface p-6 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-8">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E4F0E8] text-positive">
               <CheckCircle2 size={28} strokeWidth={1.75} />
             </span>
@@ -104,7 +104,7 @@ export default function JualEmasPage() {
               </p>
             </div>
 
-            <div className="mt-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
+            <div className="mt-4 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
               <div className="flex items-center justify-between">
                 <label htmlFor="gram" className="mb-1.5 block text-sm font-semibold text-ink-2">
                   Jumlah (gram)
@@ -118,7 +118,7 @@ export default function JualEmasPage() {
                 </button>
               </div>
               <div
-                className={`flex items-center rounded-xl border-[1.5px] bg-white px-3.5 py-3 transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30 ${
+                className={`flex items-center rounded-xl border-[1.5px] bg-surface px-3.5 py-3 transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30 ${
                   error ? "border-negative" : "border-line"
                 }`}
               >
@@ -140,7 +140,7 @@ export default function JualEmasPage() {
                 <p className="label-eyebrow text-gold-deep">
                   Estimasi diterima
                 </p>
-                <p className="mt-2 font-serif text-3xl text-ink">
+                <p className="mt-2 font-serif text-hero-figure text-ink">
                   {formatIDR(receiveIdr)}
                 </p>
                 <p className="mt-1 text-xs text-ink-2">
@@ -150,7 +150,7 @@ export default function JualEmasPage() {
               </div>
 
               <div className="mt-5 flex items-center gap-3 rounded-xl border border-line bg-cream-2 p-3.5">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-gold-deep">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface text-gold-deep">
                   <Landmark size={17} strokeWidth={2} />
                 </span>
                 <div className="flex-1">
@@ -167,7 +167,7 @@ export default function JualEmasPage() {
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="mt-5 w-full rounded-xl bg-ink py-3 text-sm font-semibold text-cream transition hover:brightness-110 active:scale-[0.99]"
+                className="mt-5 w-full rounded-xl bg-gradient-to-br from-gold to-gold-deep py-3 text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105 active:scale-[0.99]"
               >
                 Jual Sekarang
               </button>

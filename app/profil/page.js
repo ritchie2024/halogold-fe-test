@@ -50,7 +50,7 @@ export default function ProfilPage() {
           Profil &amp; Keamanan
         </h1>
 
-        <div className="mt-6 flex items-center gap-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
+        <div className="mt-6 flex items-center gap-4 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-gold-soft via-gold to-gold-deep font-serif text-xl text-white">
             {initial}
           </span>
@@ -63,7 +63,7 @@ export default function ProfilPage() {
           </div>
         </div>
 
-        <section className="mt-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
+        <section className="mt-4 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
           <p className="mb-1 label-eyebrow text-ink-2">
             Keamanan
           </p>
@@ -112,7 +112,7 @@ export default function ProfilPage() {
           </div>
         </section>
 
-        <section className="mt-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
+        <section className="mt-4 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
           <p className="mb-1 label-eyebrow text-ink-2">
             Lainnya
           </p>

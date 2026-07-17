@@ -1,21 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #faf5ea;
-  --color-cream-2: #f3ead7;
-  --color-gold: #b8893d;
-  --color-gold-deep: #8c6626;
-  --color-gold-soft: #e9d9b8;
-  --color-ink: #2a1f14;
+  /* ---- Rasio 60-30-10: cream (60% dominan) / ink teks (30%) / gold (10% aksen) ---- */
+  --color-cream: #faf5ea;      /* 60% — latar dominan */
+  --color-cream-2: #f3ead7;    /* variasi latar sekunder */
+  --color-surface: #ffffff;    /* permukaan kartu */
+  --color-ink: #2a1f14;        /* 30% — teks & elemen gelap */
   --color-ink-2: #5c4e3c;
   --color-line: #e4d9c3;
+  --color-gold: #b8893d;       /* 10% — aksen */
+  --color-gold-deep: #8c6626;
+  --color-gold-soft: #e9d9b8;
   --color-positive: #2e7d4f;
   --color-negative: #b3432b;
+  --color-on-gold: #f5efe2;    /* teks tetap terang di atas kartu gold-gradient gelap (kedua tema) */
+
+  --card-shadow: 0 2px 10px -4px rgba(42, 31, 20, 0.06);
+  --card-shadow-hover: 0 10px 24px -10px rgba(42, 31, 20, 0.14);
+  --gold-glow: 0 0 0 rgba(184, 137, 61, 0);
+}
+
+/* ---- Dark mode: gaya "dark-luxury-glow", tetap rasio 60-30-10 yang sama ---- */
+.dark {
+  --color-cream: #0b0904;
+  --color-cream-2: #17130c;
+  --color-surface: #151109;
+  --color-ink: #f1e8d6;
+  --color-ink-2: #a99a7c;
+  --color-line: #2c2416;
+  --color-gold: #d9ad52;
+  --color-gold-deep: #f0c766;
+  --color-gold-soft: #f6dfa0;
+  --color-positive: #55b884;
+  --color-negative: #e08669;
+
+  --card-shadow: 0 1px 0 rgba(217, 173, 82, 0.06) inset, 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --card-shadow-hover: 0 1px 0 rgba(217, 173, 82, 0.1) inset, 0 16px 40px -14px rgba(0, 0, 0, 0.7);
+  --gold-glow: 0 0 28px rgba(217, 173, 82, 0.25);
 }
 
 @theme inline {
   --color-cream: var(--color-cream);
   --color-cream-2: var(--color-cream-2);
+  --color-surface: var(--color-surface);
   --color-gold: var(--color-gold);
   --color-gold-deep: var(--color-gold-deep);
   --color-gold-soft: var(--color-gold-soft);
@@ -24,6 +51,7 @@
   --color-line: var(--color-line);
   --color-positive: var(--color-positive);
   --color-negative: var(--color-negative);
+  --color-on-gold: var(--color-on-gold);
   --font-sans: "Crimson Pro", ui-serif, Georgia, serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-label: "Cinzel", "Cormorant Garamond", serif;
@@ -34,6 +62,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 16.5px;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 .font-serif {
@@ -48,7 +77,7 @@ body {
 }
 
 /* Label bergaya "eyebrow" — huruf kapital berjarak lebar, dipakai konsisten
-   di seluruh halaman sebagai signature tipografi (terinspirasi referensi). */
+   di seluruh halaman sebagai signature tipografi. */
 .label-eyebrow {
   font-family: var(--font-label);
   font-size: 0.68rem;
@@ -62,4 +91,30 @@ body {
   width: 44px;
   height: 1.5px;
   background: linear-gradient(to right, var(--color-gold), transparent);
+}
+
+/* Kartu standar — shadow menyesuaikan tema (soft di light, glow di dark) */
+.card-surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+.card-surface:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Efek glow emas — dipakai pada elemen kunci (saldo, CTA) agar terasa premium,
+   otomatis lebih terasa di dark mode sesuai referensi "dark-luxury-glow" */
+.gold-glow {
+  box-shadow: var(--gold-glow);
+}
+
+/* Skala tipografi finansial presisi (referensi: hero ~34px, section ~17px, label 13-15px) */
+.text-hero-figure {
+  font-size: 2.125rem; /* 34px */
+  line-height: 1.1;
+}
+.text-section-title {
+  font-size: 1.0625rem; /* 17px */
 }

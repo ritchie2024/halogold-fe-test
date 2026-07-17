@@ -116,7 +116,7 @@ export default function BeliEmasPage() {
 
         {/* STEP 1: FORM */}
         {step === "form" ? (
-          <div className="mt-6 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
+          <div className="mt-6 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
             <div className="flex gap-2">
               <button
                 type="button"
@@ -158,7 +158,7 @@ export default function BeliEmasPage() {
                   }
                   onChange={handleAmountChange}
                   placeholder="0"
-                  className="w-40 bg-transparent text-center font-serif text-3xl text-ink outline-none placeholder:text-ink-2/40"
+                  className="w-40 bg-transparent text-center font-serif text-hero-figure text-ink outline-none placeholder:text-ink-2/40"
                 />
                 {mode === "gram" ? (
                   <span className="text-2xl text-ink-2">gr</span>
@@ -183,7 +183,7 @@ export default function BeliEmasPage() {
                   className={`rounded-full border px-3 py-1.5 text-xs transition ${
                     mode === "rp" && Number(rawAmount) === value
                       ? "border-gold bg-gold text-white"
-                      : "border-line bg-white text-ink-2 hover:border-gold hover:text-gold-deep"
+                      : "border-line bg-surface text-ink-2 hover:border-gold hover:text-gold-deep"
                   }`}
                 >
                   {value >= 1000000
@@ -239,7 +239,7 @@ export default function BeliEmasPage() {
 
         {/* STEP 2: QRIS PAYMENT */}
         {step === "qris" ? (
-          <div className="mt-6 rounded-2xl border border-line bg-white p-6 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-8">
+          <div className="mt-6 rounded-2xl border border-line bg-surface p-6 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-8">
             <p className="text-sm text-ink-2">
               Pindai dengan aplikasi bank / e-wallet apa pun
             </p>
@@ -282,7 +282,7 @@ export default function BeliEmasPage() {
 
         {/* STEP 3: SUCCESS */}
         {step === "success" && lastTrx ? (
-          <div className="mt-6 rounded-2xl border border-line bg-white p-6 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-8">
+          <div className="mt-6 rounded-2xl border border-line bg-surface p-6 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-8">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E4F0E8] text-positive">
               <CheckCircle2 size={28} strokeWidth={1.75} />
             </span>

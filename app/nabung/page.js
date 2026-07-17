@@ -37,7 +37,7 @@ export default function NabungPage() {
               return (
                 <div
                   key={goal.id}
-                  className="rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-cream shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6"
+                  className="rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6"
                 >
                   <div className="flex items-center justify-between">
                     <p className="text-sm text-gold-soft">
@@ -69,7 +69,7 @@ export default function NabungPage() {
             return (
               <div
                 key={goal.id}
-                className="rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6"
+                className="rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6"
               >
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-ink-2">
@@ -103,7 +103,7 @@ export default function NabungPage() {
                 "Fitur pembuatan target baru sedang dikembangkan — di luar cakupan Technical Test ini."
               )
             }
-            className="flex flex-col items-center gap-1 rounded-2xl border border-dashed border-gold bg-white/60 p-6 text-center text-gold-deep transition hover:bg-cream-2"
+            className="flex flex-col items-center gap-1 rounded-2xl border border-dashed border-gold bg-surface/60 p-6 text-center text-gold-deep transition hover:bg-cream-2"
           >
             <Plus size={20} strokeWidth={2} />
             <span className="text-sm font-semibold">Buat target baru</span>

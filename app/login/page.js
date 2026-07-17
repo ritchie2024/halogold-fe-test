@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Gem } from "lucide-react";
+import { Gem, Moon, Sun } from "lucide-react";
+import { useApp } from "@/lib/AppContext";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function LoginPage() {
   const router = useRouter();
+  const { theme, toggleTheme } = useApp();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -43,6 +45,19 @@ export default function LoginPage() {
 
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cream px-4 py-12">
+      <button
+        type="button"
+        onClick={toggleTheme}
+        aria-label={theme === "dark" ? "Aktifkan mode terang" : "Aktifkan mode gelap"}
+        className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-2 transition hover:border-gold hover:text-gold-deep sm:right-6 sm:top-6"
+      >
+        {theme === "dark" ? (
+          <Sun size={16} strokeWidth={2} />
+        ) : (
+          <Moon size={16} strokeWidth={2} />
+        )}
+      </button>
+
       {/* Ambient glow — signature background detail */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-40 blur-3xl"
@@ -80,7 +95,7 @@ export default function LoginPage() {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="rounded-2xl border border-line bg-white p-6 shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-7"
+          className="rounded-2xl border border-line bg-surface p-6 shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-7"
         >
           <div className="mb-4">
             <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-ink-2">
@@ -93,7 +108,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="nama@email.com"
-              className={`w-full rounded-xl border-[1.5px] bg-white px-3.5 py-3 text-ink placeholder:text-ink-2/50 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30 ${
+              className={`w-full rounded-xl border-[1.5px] bg-surface px-3.5 py-3 text-ink placeholder:text-ink-2/50 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30 ${
                 errors.email ? "border-negative" : "border-line"
               }`}
             />
@@ -113,7 +128,7 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Minimal 6 karakter"
-              className={`w-full rounded-xl border-[1.5px] bg-white px-3.5 py-3 text-ink placeholder:text-ink-2/50 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30 ${
+              className={`w-full rounded-xl border-[1.5px] bg-surface px-3.5 py-3 text-ink placeholder:text-ink-2/50 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30 ${
                 errors.password ? "border-negative" : "border-line"
               }`}
             />
