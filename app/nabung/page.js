@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Plus } from "lucide-react";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
+import PageHeading from "@/components/PageHeading";
 import { useApp } from "@/lib/AppContext";
 import { formatIDR } from "@/lib/format";
 
@@ -23,9 +24,7 @@ export default function NabungPage() {
           Kembali ke Dashboard
         </Link>
 
-        <h1 className="mt-3 font-serif text-[1.9rem] tracking-tight text-ink sm:text-3xl">
-          Target Emas Saya
-        </h1>
+        <PageHeading eyebrow="Cost Averaging" title="Target Emas Saya" />
 
         <div className="mt-6 flex flex-col gap-4">
           {savingsGoals.map((goal) => {
@@ -114,7 +113,7 @@ export default function NabungPage() {
           </button>
 
           <div className="rounded-2xl border border-line bg-cream-2 p-5">
-            <p className="text-xs uppercase tracking-[0.14em] text-gold-deep">
+            <p className="label-eyebrow text-gold-deep">
               Kenapa menabung rutin?
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink-2">

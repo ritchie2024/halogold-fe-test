@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Coins, TrendingUp, Target, Package, Gift } from "lucide-react";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
+import PageHeading from "@/components/PageHeading";
 import StatCard from "@/components/StatCard";
 import SparkChart from "@/components/SparkChart";
 import TransactionRow from "@/components/TransactionRow";
@@ -33,16 +34,13 @@ export default function DashboardPage() {
       <Header />
 
       <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-        <p className="text-sm text-ink-2">Selamat datang kembali,</p>
-        <h1 className="mt-1 font-serif text-[1.9rem] tracking-tight text-ink sm:text-3xl">
-          {user.name}
-        </h1>
+        <PageHeading eyebrow="Selamat Datang Kembali" title={user.name} />
 
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-cream shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:col-span-1 sm:p-6">
             <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
             <div className="relative flex items-start justify-between">
-              <p className="text-xs uppercase tracking-[0.16em] text-gold-soft">
+              <p className="label-eyebrow text-gold-soft">
                 Total Tabungan Emas
               </p>
               <Coins size={18} strokeWidth={1.75} className="text-gold-soft/80" />
@@ -104,9 +102,9 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <section className="mt-8 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
-          <div className="mb-2 flex items-center justify-between">
-            <h2 className="font-serif text-xl text-ink">
+        <section className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="font-serif text-[1.4rem] font-medium text-ink">
               Aktivitas Terakhir
             </h2>
             <Link

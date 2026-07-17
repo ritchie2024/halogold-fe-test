@@ -260,7 +260,7 @@ export default function BeliEmasPage() {
             </div>
 
             <div className="mt-4 rounded-xl border border-line bg-cream-2 p-4 text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-gold-deep">
+              <p className="label-eyebrow text-gold-deep">
                 Setelah pembayaran diterima
               </p>
               <p className="mt-2 text-[12.5px] leading-relaxed text-ink-2">

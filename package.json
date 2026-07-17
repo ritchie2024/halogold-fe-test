@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fontsource/cinzel": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/crimson-pro": "^5.2.8",
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/manrope": "^5.2.8",
     "lucide-react": "^1.24.0",

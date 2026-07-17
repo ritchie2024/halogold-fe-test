@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
+import PageHeading from "@/components/PageHeading";
 import { useApp } from "@/lib/AppContext";
 
 const SECURITY_ITEMS = [
@@ -63,7 +64,7 @@ export default function ProfilPage() {
         </div>
 
         <section className="mt-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-ink-2">
+          <p className="mb-1 label-eyebrow text-ink-2">
             Keamanan
           </p>
           {SECURITY_ITEMS.map((item) => {
@@ -112,7 +113,7 @@ export default function ProfilPage() {
         </section>
 
         <section className="mt-4 rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)]">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-ink-2">
+          <p className="mb-1 label-eyebrow text-ink-2">
             Lainnya
           </p>
           {OTHER_ITEMS.map((item) => {

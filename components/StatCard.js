@@ -5,7 +5,7 @@ export default function StatCard({ label, value, sub, variant = "default", icon,
         <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5 transition duration-500 group-hover:scale-110" />
         <span className="pointer-events-none absolute -bottom-14 -left-8 h-32 w-32 rounded-full bg-gold-soft/10" />
         <div className="relative flex items-start justify-between">
-          <p className="text-xs uppercase tracking-[0.16em] text-gold-soft">
+          <p className="label-eyebrow text-gold-soft">
             {label}
           </p>
           {icon ? <span className="text-gold-soft/80">{icon}</span> : null}
@@ -21,7 +21,7 @@ export default function StatCard({ label, value, sub, variant = "default", icon,
   return (
     <div className="group rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition duration-300 hover:shadow-[0_10px_24px_-10px_rgba(42,31,20,0.14)] sm:p-6">
       <div className="flex items-start justify-between">
-        <p className="text-xs uppercase tracking-[0.16em] text-ink-2">
+        <p className="label-eyebrow text-ink-2">
           {label}
         </p>
         {icon ? <span className="text-gold-deep/70">{icon}</span> : null}

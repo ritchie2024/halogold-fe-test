@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Landmark } from "lucide-react";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
+import PageHeading from "@/components/PageHeading";
 import { useApp } from "@/lib/AppContext";
 import { formatGram, formatIDR } from "@/lib/format";
 
@@ -59,9 +60,7 @@ export default function JualEmasPage() {
           Kembali ke Dashboard
         </Link>
 
-        <h1 className="mt-3 font-serif text-[1.9rem] tracking-tight text-ink sm:text-3xl">
-          Jual Emas
-        </h1>
+        <PageHeading eyebrow="Buyback" title="Jual Emas" />
 
         {lastTrx ? (
           <div className="mt-6 rounded-2xl border border-line bg-white p-6 text-center shadow-[0_20px_44px_-24px_rgba(42,31,20,0.35)] sm:p-8">
@@ -97,7 +96,7 @@ export default function JualEmasPage() {
         ) : (
           <>
             <div className="mt-6 rounded-2xl border border-line bg-cream-2 p-5 sm:p-6">
-              <p className="text-xs uppercase tracking-[0.14em] text-gold-deep">
+              <p className="label-eyebrow text-gold-deep">
                 Saldo tersedia
               </p>
               <p className="mt-1 font-serif text-xl text-ink">
@@ -138,7 +137,7 @@ export default function JualEmasPage() {
               ) : null}
 
               <div className="mt-5 rounded-xl border border-dashed border-gold bg-cream-2 px-4 py-5 text-center">
-                <p className="text-xs uppercase tracking-[0.14em] text-gold-deep">
+                <p className="label-eyebrow text-gold-deep">
                   Estimasi diterima
                 </p>
                 <p className="mt-2 font-serif text-3xl text-ink">

@@ -24,14 +24,16 @@
   --color-line: var(--color-line);
   --color-positive: var(--color-positive);
   --color-negative: var(--color-negative);
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Crimson Pro", ui-serif, Georgia, serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-label: "Cinzel", "Cormorant Garamond", serif;
 }
 
 body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-size: 16.5px;
 }
 
 .font-serif {
@@ -42,5 +44,22 @@ body {
 .font-serif-italic {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+/* Label bergaya "eyebrow" — huruf kapital berjarak lebar, dipakai konsisten
+   di seluruh halaman sebagai signature tipografi (terinspirasi referensi). */
+.label-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Garis tipis emas — signature divider di bawah judul */
+.gold-rule {
+  width: 44px;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--color-gold), transparent);
 }

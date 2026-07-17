@@ -38,7 +38,7 @@ function ComingSoonContent() {
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cream-2 text-gold-deep">
             <Sparkles size={26} strokeWidth={1.75} />
           </span>
-          <p className="mt-5 text-xs font-bold uppercase tracking-[0.16em] text-gold-deep">
+          <p className="mt-5 label-eyebrow text-gold-deep">
             Segera Hadir
           </p>
           <h1 className="mt-2 font-serif text-2xl text-ink">{fitur}</h1>

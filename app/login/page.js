@@ -57,10 +57,22 @@ export default function LoginPage() {
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-soft via-gold to-gold-deep text-white shadow-[0_10px_24px_-8px_rgba(140,102,38,0.6)]">
             <Gem size={26} strokeWidth={1.75} />
           </span>
-          <h1 className="mt-5 font-serif text-[2rem] leading-none tracking-tight text-ink">
-            Halo<span className="text-gold-deep">Gold</span>
+          <p
+            className="mt-5 text-gold-deep"
+            style={{
+              fontFamily: "var(--font-label)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+            }}
+          >
+            Investasi Emas Digital
+          </p>
+          <h1 className="mt-3 font-serif text-[2.4rem] font-medium leading-none tracking-tight text-ink">
+            Halo<em className="text-gold-deep not-italic">Gold</em>
           </h1>
-          <p className="mt-2 font-serif text-[15px] italic text-ink-2">
+          <div className="gold-rule mt-4" />
+          <p className="font-serif-italic mt-4 text-[15px] text-ink-2">
             Masuk untuk mulai menabung emas digital
           </p>
         </div>

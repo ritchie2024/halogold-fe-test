@@ -89,7 +89,7 @@ export default function RiwayatPage() {
                 key={month}
                 className="rounded-2xl border border-line bg-white p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6"
               >
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-ink-2">
+                <p className="mb-1 label-eyebrow text-ink-2">
                   {month}
                 </p>
                 <div>
