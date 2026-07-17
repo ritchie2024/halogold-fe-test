@@ -141,7 +141,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full rounded-xl bg-gradient-to-br from-gold to-gold-deep py-3 text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.55)] transition hover:brightness-105 active:scale-[0.99]"
+            className="w-full btn-primary"
           >
             Masuk
           </button>

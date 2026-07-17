@@ -10,7 +10,7 @@ export default function StatCard({ label, value, sub, variant = "default", icon,
           </p>
           {icon ? <span className="text-gold-soft/80">{icon}</span> : null}
         </div>
-        <p className="relative mt-2 font-serif text-hero-figure">{value}</p>
+        <p className="relative mt-2 font-serif text-hero-figure figure-nums">{value}</p>
         {sub ? (
           <p className="relative mt-1 text-sm text-[#E5D6B5]">{sub}</p>
         ) : null}
@@ -26,7 +26,7 @@ export default function StatCard({ label, value, sub, variant = "default", icon,
         </p>
         {icon ? <span className="text-gold-deep/70">{icon}</span> : null}
       </div>
-      <p className="mt-2 font-serif text-hero-figure text-ink">{value}</p>
+      <p className="mt-2 font-serif text-hero-figure figure-nums text-ink">{value}</p>
       {sub ? <p className="mt-1 text-sm text-ink-2">{sub}</p> : null}
       {chart ? <div className="mt-3">{chart}</div> : null}
     </div>

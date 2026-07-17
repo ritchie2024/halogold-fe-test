@@ -158,7 +158,7 @@ export default function BeliEmasPage() {
                   }
                   onChange={handleAmountChange}
                   placeholder="0"
-                  className="w-40 bg-transparent text-center font-serif text-hero-figure text-ink outline-none placeholder:text-ink-2/40"
+                  className="w-40 bg-transparent text-center font-serif text-hero-figure figure-nums text-ink outline-none placeholder:text-ink-2/40"
                 />
                 {mode === "gram" ? (
                   <span className="text-2xl text-ink-2">gr</span>
@@ -227,7 +227,7 @@ export default function BeliEmasPage() {
             <button
               type="button"
               onClick={goToPayment}
-              className="mt-5 w-full rounded-xl bg-gradient-to-br from-gold to-gold-deep py-3 text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105 active:scale-[0.99]"
+              className="mt-5 w-full btn-primary"
             >
               Konfirmasi &amp; Bayar
             </button>
@@ -273,7 +273,7 @@ export default function BeliEmasPage() {
             <button
               type="button"
               onClick={confirmPayment}
-              className="mt-5 w-full rounded-xl bg-gradient-to-br from-gold to-gold-deep py-3 text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105 active:scale-[0.99]"
+              className="mt-5 w-full btn-primary"
             >
               Saya Sudah Bayar (Simulasi)
             </button>
@@ -300,13 +300,13 @@ export default function BeliEmasPage() {
               <button
                 type="button"
                 onClick={resetFlow}
-                className="flex-1 rounded-xl border-[1.5px] border-gold py-2.5 text-sm font-semibold text-gold-deep transition hover:bg-cream-2"
+                className="flex-1 btn-secondary py-2.5"
               >
                 Beli Lagi
               </button>
               <Link
                 href="/dashboard"
-                className="flex-1 rounded-xl bg-gradient-to-br from-gold to-gold-deep py-2.5 text-center text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105"
+                className="flex-1 btn-primary py-2.5"
               >
                 Lihat Dashboard
               </Link>

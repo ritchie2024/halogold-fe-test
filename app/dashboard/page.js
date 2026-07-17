@@ -45,7 +45,7 @@ export default function DashboardPage() {
               </p>
               <Coins size={18} strokeWidth={1.75} className="text-gold-soft/80" />
             </div>
-            <p className="relative mt-2 font-serif text-hero-figure">
+            <p className="relative mt-2 font-serif text-hero-figure figure-nums">
               {formatGram(balanceGram)}
             </p>
             <p className="relative mt-1 text-sm text-[#E5D6B5]">

@@ -81,13 +81,13 @@ export default function JualEmasPage() {
               <button
                 type="button"
                 onClick={() => setLastTrx(null)}
-                className="flex-1 rounded-xl border-[1.5px] border-gold py-2.5 text-sm font-semibold text-gold-deep transition hover:bg-cream-2"
+                className="flex-1 btn-secondary py-2.5"
               >
                 Jual Lagi
               </button>
               <Link
                 href="/dashboard"
-                className="flex-1 rounded-xl bg-gradient-to-br from-gold to-gold-deep py-2.5 text-center text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105"
+                className="flex-1 btn-primary py-2.5"
               >
                 Lihat Dashboard
               </Link>
@@ -140,7 +140,7 @@ export default function JualEmasPage() {
                 <p className="label-eyebrow text-gold-deep">
                   Estimasi diterima
                 </p>
-                <p className="mt-2 font-serif text-hero-figure text-ink">
+                <p className="mt-2 font-serif text-hero-figure figure-nums text-ink">
                   {formatIDR(receiveIdr)}
                 </p>
                 <p className="mt-1 text-xs text-ink-2">
@@ -167,7 +167,7 @@ export default function JualEmasPage() {
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="mt-5 w-full rounded-xl bg-gradient-to-br from-gold to-gold-deep py-3 text-sm font-semibold text-white shadow-[0_10px_20px_-8px_rgba(140,102,38,0.5)] transition hover:brightness-105 active:scale-[0.99]"
+                className="mt-5 w-full btn-primary"
               >
                 Jual Sekarang
               </button>
