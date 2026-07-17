@@ -8,6 +8,12 @@ import PageHeading from "@/components/PageHeading";
 import { useApp } from "@/lib/AppContext";
 import { formatIDR } from "@/lib/format";
 
+function formatGoalGram(value) {
+  return new Intl.NumberFormat("id-ID", { maximumFractionDigits: 1 }).format(
+    value
+  );
+}
+
 export default function NabungPage() {
   const { savingsGoals } = useApp();
 
@@ -40,15 +46,16 @@ export default function NabungPage() {
                   className="rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6"
                 >
                   <div className="flex items-center justify-between">
-                    <p className="text-sm text-gold-soft">
+                    <p className="label-eyebrow text-gold-soft">
                       {goal.icon} {goal.name}
                     </p>
                     <span className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-[#F2D896]">
                       Aktif
                     </span>
                   </div>
-                  <p className="mt-2 font-serif text-2xl">
-                    {goal.currentGram} / {goal.targetGram}{" "}
+                  <p className="mt-2 font-serif text-2xl figure-nums">
+                    {formatGoalGram(goal.currentGram)} /{" "}
+                    {formatGoalGram(goal.targetGram)}{" "}
                     <span className="text-base font-sans">gram</span>
                   </p>
                   <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-white/20">
@@ -72,15 +79,16 @@ export default function NabungPage() {
                 className="rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6"
               >
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-ink-2">
+                  <p className="label-eyebrow text-ink-2">
                     {goal.icon} {goal.name}
                   </p>
                   <span className="rounded-full bg-[#E4F0E8] px-2.5 py-1 text-[11px] font-semibold text-positive">
                     Aktif
                   </span>
                 </div>
-                <p className="mt-2 font-serif text-lg text-ink">
-                  {goal.currentGram} / {goal.targetGram} gram
+                <p className="mt-2 font-serif text-lg text-ink figure-nums">
+                  {formatGoalGram(goal.currentGram)} /{" "}
+                  {formatGoalGram(goal.targetGram)} gram
                 </p>
                 <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-cream-2">
                   <div

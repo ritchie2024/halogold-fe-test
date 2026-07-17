@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
-// Root langsung mengarahkan pengguna ke halaman Login.
+// Root mengarahkan ke Onboarding — sesuai urutan blueprint resmi:
+// Onboarding (perkenalan & trust-building) -> Login/Registrasi.
 export default function Home() {
-  redirect("/login");
+  redirect("/onboarding");
 }

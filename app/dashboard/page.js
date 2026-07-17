@@ -1,33 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { Coins, TrendingUp, Target, Package, Gift } from "lucide-react";
+import { Coins, Target, Package, Gift } from "lucide-react";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import PageHeading from "@/components/PageHeading";
-import StatCard from "@/components/StatCard";
-import SparkChart from "@/components/SparkChart";
+import PriceRangeChart from "@/components/PriceRangeChart";
 import TransactionRow from "@/components/TransactionRow";
 import { useApp } from "@/lib/AppContext";
 import { formatGram, formatIDR } from "@/lib/format";
 
 const QUICK_ACTIONS = [
-  { icon: Target, label: "Target Emas", href: "/nabung" },
-  { icon: Coins, label: "hGOLD Token", href: "/segera-hadir?fitur=hGOLD%20Token" },
-  { icon: Package, label: "Cetak Fisik", href: "/segera-hadir?fitur=Cetak%20Fisik" },
-  { icon: Gift, label: "Kado Emas", href: "/segera-hadir?fitur=Kado%20Emas" },
+  {
+    icon: Target,
+    label: "Target Emas",
+    href: "/nabung",
+    bg: "bg-[#F8E1E8]",
+    fg: "text-[#B5486E]",
+  },
+  {
+    icon: Coins,
+    label: "hGOLD Token",
+    href: "/hgold-token",
+    bg: "bg-chip",
+    fg: "text-gold-deep",
+  },
+  {
+    icon: Package,
+    label: "Cetak Fisik",
+    href: "/cetak-fisik",
+    bg: "bg-[#EAE0D3]",
+    fg: "text-[#7A5A38]",
+  },
+  {
+    icon: Gift,
+    label: "Kado Emas",
+    href: "/segera-hadir?fitur=Kado%20Emas",
+    bg: "bg-[#F6E2DC]",
+    fg: "text-negative",
+  },
 ];
 
 export default function DashboardPage() {
-  const { user, goldPrice, goldPriceHistory, balanceGram, transactions } =
-    useApp();
+  const {
+    user,
+    goldPrice,
+    goldPriceRanges,
+    balanceMonthlyGrowthPct,
+    balanceGram,
+    transactions,
+  } = useApp();
   const balanceIdr = balanceGram * goldPrice;
   const recentTransactions = transactions.slice(0, 5);
-
-  const changePct =
-    ((goldPriceHistory[goldPriceHistory.length - 1] - goldPriceHistory[0]) /
-      goldPriceHistory[0]) *
-    100;
 
   return (
     <div className="min-h-screen bg-cream pb-16">
@@ -45,11 +69,16 @@ export default function DashboardPage() {
               </p>
               <Coins size={18} strokeWidth={1.75} className="text-gold-soft/80" />
             </div>
+            {/* Gram ditampilkan lebih dulu, Rupiah kedua — mendidik user berpikir
+                dalam satuan aset (gram), bukan nominal uang yang berfluktuasi. */}
             <p className="relative mt-2 font-serif text-hero-figure figure-nums">
               {formatGram(balanceGram)}
             </p>
-            <p className="relative mt-1 text-sm text-[#E5D6B5]">
-              {formatIDR(balanceIdr)}
+            <p className="relative mt-1 flex items-center gap-1.5 text-sm text-[#E5D6B5]">
+              <span className="figure-nums">&asymp; {formatIDR(balanceIdr)}</span>
+              <span className="text-positive/90">
+                &#9650; +{balanceMonthlyGrowthPct}% bulan ini
+              </span>
             </p>
             <div className="relative mt-4 grid grid-cols-3 gap-2">
               <Link
@@ -73,13 +102,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <StatCard
-            label="Harga Emas Hari Ini"
-            value={formatIDR(goldPrice)}
-            sub={`per gram \u00b7 ${changePct >= 0 ? "+" : ""}${changePct.toFixed(2)}% / 7 hari`}
-            icon={<TrendingUp size={18} strokeWidth={1.75} />}
-            chart={<SparkChart data={goldPriceHistory} />}
-          />
+          <PriceRangeChart ranges={goldPriceRanges} currentPrice={goldPrice} />
 
           <div className="grid grid-cols-2 gap-3">
             {QUICK_ACTIONS.map((action) => {
@@ -90,7 +113,9 @@ export default function DashboardPage() {
                   href={action.href}
                   className="flex flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-surface px-2 py-4 text-center shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition hover:border-gold hover:shadow-[0_10px_24px_-10px_rgba(42,31,20,0.14)]"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-chip text-gold-deep">
+                  <span
+                    className={`flex h-9 w-9 items-center justify-center rounded-full ${action.bg} ${action.fg}`}
+                  >
                     <Icon size={16} strokeWidth={1.9} />
                   </span>
                   <span className="text-[11px] font-medium leading-tight text-ink-2">

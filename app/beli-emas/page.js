@@ -35,7 +35,7 @@ export default function BeliEmasPage() {
   const { goldPrice, buyGold } = useApp();
   const [step, setStep] = useState("form"); // form -> qris -> success
   const [mode, setMode] = useState("rp"); // rp | gram
-  const [rawAmount, setRawAmount] = useState("");
+  const [rawAmount, setRawAmount] = useState("500000");
   const [error, setError] = useState("");
   const [lastTrx, setLastTrx] = useState(null);
 
@@ -87,7 +87,7 @@ export default function BeliEmasPage() {
 
   function resetFlow() {
     setStep("form");
-    setRawAmount("");
+    setRawAmount("500000");
     setLastTrx(null);
   }
 
@@ -206,7 +206,20 @@ export default function BeliEmasPage() {
                   <p className="font-medium text-ink">Metode pembayaran</p>
                   <p className="text-xs text-ink-2">QRIS — bebas biaya admin</p>
                 </div>
-                <QrCode size={20} className="text-gold-deep" strokeWidth={1.75} />
+                <div className="flex items-center gap-2">
+                  <QrCode size={20} className="text-gold-deep" strokeWidth={1.75} />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      window.alert(
+                        "Saat ini QRIS adalah satu-satunya metode pembayaran yang tersedia di prototipe ini."
+                      )
+                    }
+                    className="text-xs font-semibold text-gold-deep hover:underline"
+                  >
+                    Ubah &rsaquo;
+                  </button>
+                </div>
               </div>
               <div className="pt-3 text-[13px]">
                 <div className="mb-1.5 flex justify-between">
@@ -272,8 +285,18 @@ export default function BeliEmasPage() {
 
             <button
               type="button"
+              onClick={() =>
+                window.alert("QR berhasil diunduh (simulasi) — tersimpan sebagai halogold-qr.png")
+              }
+              className="mt-5 w-full btn-secondary"
+            >
+              Unduh QR
+            </button>
+
+            <button
+              type="button"
               onClick={confirmPayment}
-              className="mt-5 w-full btn-primary"
+              className="mt-3 w-full btn-primary"
             >
               Saya Sudah Bayar (Simulasi)
             </button>

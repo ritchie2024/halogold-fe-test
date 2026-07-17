@@ -4,14 +4,16 @@ import { formatDate, formatGram, formatIDR } from "@/lib/format";
 const TYPE_META = {
   beli: { icon: ArrowDownToLine, bg: "bg-chip", fg: "text-gold-deep", label: "Beli Emas" },
   jual: { icon: ArrowUpFromLine, bg: "bg-[#E4F0E8]", fg: "text-positive", label: "Jual Emas" },
-  token: { icon: Coins, bg: "bg-chip", fg: "text-gold-deep", label: "Konversi ke hGOLD" },
+  token: { icon: Coins, bg: "bg-chip", fg: "text-gold-deep", label: "Konversi hGOLD" },
   fisik: { icon: Package, bg: "bg-[#F6E2DC]", fg: "text-negative", label: "Cetak Fisik" },
 };
 
 export default function TransactionRow({ transaction }) {
   const meta = TYPE_META[transaction.type] || TYPE_META.beli;
   const Icon = meta.icon;
-  const isPositiveGram = transaction.type === "beli" || transaction.type === "token";
+  const isToken = transaction.type === "token";
+  const isPositiveGram = transaction.type === "beli";
+  const title = isToken && transaction.method ? transaction.method : meta.label;
 
   return (
     <div className="flex items-center justify-between gap-3 border-b border-line/70 py-3.5 last:border-none">
@@ -22,9 +24,9 @@ export default function TransactionRow({ transaction }) {
           <Icon size={17} strokeWidth={2.25} />
         </span>
         <div>
-          <p className="text-[13.5px] font-semibold text-ink">{meta.label}</p>
+          <p className="text-[13.5px] font-semibold text-ink">{title}</p>
           <p className="text-xs text-ink-2">
-            {transaction.method ? `${transaction.method} \u00b7 ` : ""}
+            {!isToken && transaction.method ? `${transaction.method} \u00b7 ` : ""}
             {formatDate(transaction.date)}
           </p>
         </div>
@@ -40,7 +42,7 @@ export default function TransactionRow({ transaction }) {
           {formatIDR(transaction.amount)}
         </p>
         <p className="text-xs text-ink-2">
-          {isPositiveGram ? "+" : "\u2212"}
+          {isToken ? "\u21c4 " : isPositiveGram ? "+" : "\u2212"}
           {formatGram(transaction.gram)}
         </p>
       </div>

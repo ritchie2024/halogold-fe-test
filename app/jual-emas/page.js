@@ -12,7 +12,7 @@ import { formatGram, formatIDR } from "@/lib/format";
 export default function JualEmasPage() {
   const { balanceGram, buybackPrice, buybackSpread, bankAccount, sellGold } =
     useApp();
-  const [rawGram, setRawGram] = useState("");
+  const [rawGram, setRawGram] = useState("2");
   const [error, setError] = useState("");
   const [lastTrx, setLastTrx] = useState(null);
 
@@ -118,7 +118,7 @@ export default function JualEmasPage() {
                 </button>
               </div>
               <div
-                className={`flex items-center rounded-xl border-[1.5px] bg-surface px-3.5 py-3 transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30 ${
+                className={`flex items-center justify-center rounded-xl border-[1.5px] bg-cream-2 px-3.5 py-5 text-center transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30 ${
                   error ? "border-negative" : "border-line"
                 }`}
               >
@@ -128,9 +128,9 @@ export default function JualEmasPage() {
                   value={rawGram}
                   onChange={handleGramChange}
                   placeholder="0,0000"
-                  className="w-full bg-transparent text-ink outline-none placeholder:text-ink-2/50"
+                  className="w-40 bg-transparent text-center font-serif text-hero-figure figure-nums text-ink outline-none placeholder:text-ink-2/40"
                 />
-                <span className="ml-2 text-ink-2">gram</span>
+                <span className="ml-2 text-lg text-ink-2">gram</span>
               </div>
               {error ? (
                 <p className="mt-1.5 text-xs text-negative">{error}</p>
@@ -167,13 +167,13 @@ export default function JualEmasPage() {
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="mt-5 w-full btn-primary"
+                className="mt-5 w-full btn-dark"
               >
                 Jual Sekarang
               </button>
               <p className="mt-3 text-center text-xs text-ink-2">
                 Demi keamanan, pencairan hanya ke rekening atas nama Anda
-                sendiri.
+                sendiri. Estimasi masuk &lt; 10 menit.
               </p>
             </div>
           </>
