@@ -15,7 +15,7 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur-md">
+    <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-2.5 sm:px-10">
         {TABS.slice(0, 2).map((tab) => {
           const Icon = tab.icon;

@@ -22,7 +22,7 @@ function ComingSoonContent() {
     DESCRIPTIONS[fitur] || "Fitur ini sedang dalam pengembangan tim produk HaloGold.";
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream pb-16">
       <Header />
 
       <main className="mx-auto max-w-lg px-4 py-10 sm:px-6">
