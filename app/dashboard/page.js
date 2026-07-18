@@ -126,7 +126,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <section className="mt-10 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
+        <section className="mt-4 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] sm:p-6">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-serif text-[1.4rem] font-medium text-ink">
               Aktivitas Terakhir
