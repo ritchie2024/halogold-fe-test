@@ -129,6 +129,21 @@ export default function NabungPage() {
               tidak perlu menebak kapan harga emas turun.
             </p>
           </div>
+
+          <Link
+            href="/emas-berimbal"
+            className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface p-5 shadow-[0_2px_10px_-4px_rgba(42,31,20,0.06)] transition hover:border-gold"
+          >
+            <div>
+              <p className="text-sm font-semibold text-ink">
+                Ingin emas Anda tumbuh lebih jauh?
+              </p>
+              <p className="mt-1 text-xs text-ink-2">
+                Coba Emas Berimbal — proyeksi imbal hasil dalam gram
+              </p>
+            </div>
+            <span className="text-lg text-gold-deep">&rsaquo;</span>
+          </Link>
         </div>
       </main>
 

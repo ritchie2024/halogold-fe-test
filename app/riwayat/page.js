@@ -14,6 +14,7 @@ const FILTERS = [
   { key: "jual", label: "Jual" },
   { key: "token", label: "Token" },
   { key: "fisik", label: "Fisik" },
+  { key: "yield", label: "Yield" },
 ];
 
 function monthLabel(isoString) {

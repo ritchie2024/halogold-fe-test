@@ -9,6 +9,7 @@ import {
   Landmark,
   FileText,
   Scale,
+  Landmark as LandmarkAlt,
   MessageCircle,
   ChevronRight,
 } from "lucide-react";
@@ -25,6 +26,7 @@ const SECURITY_ITEMS = [
 
 const OTHER_ITEMS = [
   { icon: FileText, title: "Sertifikat kepemilikan saya" },
+  { icon: LandmarkAlt, title: "Opini & akad syariah" },
   { icon: Scale, title: "Izin & legalitas (Bappebti \u2192 OJK)" },
   { icon: MessageCircle, title: "Bantuan 24/7" },
 ];

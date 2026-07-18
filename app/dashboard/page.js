@@ -35,7 +35,7 @@ const QUICK_ACTIONS = [
   {
     icon: Gift,
     label: "Kado Emas",
-    href: "/segera-hadir?fitur=Kado%20Emas",
+    href: "/kirim-kado",
     bg: "bg-[#F6E2DC]",
     fg: "text-negative",
   },
