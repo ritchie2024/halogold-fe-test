@@ -17,6 +17,9 @@
   --color-positive: #2e7d4f;
   --color-negative: #b3432b;
   --color-on-gold: #f5efe2;    /* teks tetap terang di atas kartu gold-gradient gelap (kedua tema) */
+  --color-on-gold-positive: #7eddaa; /* hijau tetap terang di atas kartu gelap, TIDAK ikut toggle tema */
+  --color-on-gold-negative: #f0937c;
+  --color-on-gold-muted: #d9c9a8;
 
   --card-shadow: 0 3px 14px -5px rgba(36, 26, 16, 0.12);
   --card-shadow-hover: 0 12px 28px -10px rgba(36, 26, 16, 0.2);
@@ -161,7 +164,53 @@ body {
   font-feature-settings: "tnum" 1;
 }
 
-/* ---- Tombol primer: gradasi gold + highlight kaca tipis di atas (modern, bukan flat) ---- */
+/* ---- Kartu "hero" gold-gradient — dipakai untuk saldo & posisi utama.
+   Latar SENGAJA pakai warna tetap (bukan token tema), supaya kartu ini selalu
+   konsisten gelap di light maupun dark mode — identik dengan perlakuan logo
+   & ilustrasi koin. Ditambah tekstur garis halus ala "brushed gold" + radial
+   glow supaya latar tidak terasa polos. ---- */
+.gold-hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  color: var(--color-on-gold);
+  background: linear-gradient(155deg, #3a2b18 0%, #5c4320 42%, #8c6626 72%, #b3801f 100%);
+  box-shadow: 0 18px 36px -18px rgba(42, 31, 20, 0.55);
+}
+@media (min-width: 640px) {
+  .gold-hero-card {
+    padding: 1.5rem;
+  }
+}
+.gold-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.045) 0px,
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+  pointer-events: none;
+}
+.gold-hero-card::after {
+  content: "";
+  position: absolute;
+  right: -44px;
+  top: -44px;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.text-on-gold-positive { color: var(--color-on-gold-positive); }
+.text-on-gold-negative { color: var(--color-on-gold-negative); }
+.text-on-gold-muted { color: var(--color-on-gold-muted); }
 .btn-primary {
   position: relative;
   display: inline-flex;

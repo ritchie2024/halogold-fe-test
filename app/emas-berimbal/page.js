@@ -95,8 +95,7 @@ export default function EmasBerimbalPage() {
               &mdash; imbal hasil dibayar dalam gram.
             </p>
 
-            <div className="mt-5 relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6">
-              <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
+            <div className="mt-5 gold-hero-card">
               <p className="label-eyebrow text-gold-soft">Sedang Ditempatkan</p>
               <p className="relative mt-2 font-serif text-hero-figure figure-nums">
                 {formatGram(yieldActivePosition.gram).replace(" gr", "")}{" "}

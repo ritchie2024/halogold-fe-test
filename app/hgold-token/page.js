@@ -77,8 +77,7 @@ export default function HgoldTokenPage() {
         <PageHeading eyebrow="RWA \u00b7 Fitur Lanjutan" title="hGOLD Token" />
 
         {/* Kartu saldo token — gold gradient, sama treatment dengan kartu saldo utama */}
-        <div className="mt-6 relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6">
-          <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
+        <div className="mt-6 gold-hero-card">
           <div className="relative flex items-start justify-between">
             <p className="label-eyebrow text-gold-soft">Saldo Token</p>
             <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#F2D896]">

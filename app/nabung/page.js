@@ -43,9 +43,9 @@ export default function NabungPage() {
               return (
                 <div
                   key={goal.id}
-                  className="rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:p-6"
+                  className="gold-hero-card"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="relative flex items-center justify-between">
                     <p className="label-eyebrow text-gold-soft">
                       {goal.icon} {goal.name}
                     </p>

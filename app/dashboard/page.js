@@ -61,8 +61,7 @@ export default function DashboardPage() {
         <PageHeading eyebrow="Selamat Datang Kembali" title={user.name} />
 
         <div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="relative overflow-hidden rounded-2xl border-none bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-5 text-on-gold shadow-[0_18px_36px_-18px_rgba(42,31,20,0.55)] sm:col-span-1 sm:p-6">
-            <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
+          <div className="gold-hero-card sm:col-span-1">
             <div className="relative flex items-start justify-between">
               <p className="label-eyebrow text-gold-soft">
                 Total Tabungan Emas
@@ -74,9 +73,9 @@ export default function DashboardPage() {
             <p className="relative mt-2 font-serif text-hero-figure figure-nums">
               {formatGram(balanceGram)}
             </p>
-            <p className="relative mt-1 flex items-center gap-1.5 text-sm text-[#E5D6B5]">
+            <p className="relative mt-1 flex items-center gap-1.5 text-sm text-on-gold-muted">
               <span className="figure-nums">&asymp; {formatIDR(balanceIdr)}</span>
-              <span className="text-positive/90">
+              <span className="text-on-gold-positive">
                 &#9650; +{balanceMonthlyGrowthPct}% bulan ini
               </span>
             </p>

@@ -198,8 +198,7 @@ export default function KirimKadoPage() {
                   <p className="label-eyebrow mb-2 mt-5 text-ink-2">
                     Kartu Ucapan
                   </p>
-                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#3A2B18] via-[#5C4320] to-gold-deep p-4 text-on-gold">
-                    <span className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/5" />
+                  <div className="gold-hero-card !p-4 !rounded-xl">
                     <p className="relative font-serif text-lg italic leading-snug">
                       &ldquo;{message}&rdquo;
                     </p>
